@@ -20,7 +20,6 @@
   </div>
 
   <script>
-    // Ask for user name safely
     let userName = "";
     while (!userName) {
       const input = prompt("Enter your name:");
@@ -30,11 +29,8 @@
     const chatDiv = document.getElementById('chat');
     const msgInput = document.getElementById('msgInput');
     const sendBtn = document.getElementById('sendBtn');
-
-    // Store messages locally for this browser session
     let messages = [];
 
-    // Display messages
     function displayMessages() {
       chatDiv.innerHTML = "";
       messages.forEach(msg => {
@@ -46,7 +42,6 @@
       chatDiv.scrollTop = chatDiv.scrollHeight;
     }
 
-    // Send a message
     function sendMsg() {
       const text = msgInput.value.trim();
       if (text) {
@@ -57,13 +52,11 @@
       }
     }
 
-    // Send on button click or Enter key
     sendBtn.onclick = sendMsg;
     msgInput.addEventListener('keydown', function(e) {
       if (e.key === 'Enter') sendMsg();
     });
 
-    // Initial display
     displayMessages();
   </script>
 </body>
